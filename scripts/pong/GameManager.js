@@ -68,6 +68,14 @@ class GameManager {
     // Helper Methods
     // ---------------------------------------
 
+    // draws a horizontal line across the width of the canvas
+    drawHorizontalLine(y) {
+        this.context.beginPath();
+        this.context.moveTo(0, y);
+        this.context.lineTo(this.width, y);
+        this.context.stroke();
+    }
+
     // draws the environment for the game and posts it to the HTML doc
     makeCanvas() {
         let cnvs = document.createElement("canvas");
@@ -98,15 +106,8 @@ class GameManager {
     loadGameOverScreen(scoreboard) {
         this.render();
         
-        this.context.beginPath();
-        this.context.moveTo(0, this.height / 2.0 - 30);
-        this.context.lineTo(this.width, this.height / 2.0 - 30);
-        this.context.stroke();
-        
-        this.context.beginPath();
-        this.context.moveTo(0, this.height / 2.0 + 30);
-        this.context.lineTo(this.width, this.height / 2.0 + 30);
-        this.context.stroke();
+        this.drawHorizontalLine(this.height / 2.0 - 30);
+        this.drawHorizontalLine(this.height / 2.0 + 30);
         
         let msg1 = (this.playerWins) ? "YOU WIN!!!" : "You lost...";
         let msg2 = "Press Enter to play again";
@@ -132,15 +133,8 @@ class GameManager {
     loadMainMenu() {
         this.render();
 
-        this.context.beginPath();
-        this.context.moveTo(0, this.height / 2.0 - 60);
-        this.context.lineTo(this.width, this.height / 2.0 - 60);
-        this.context.stroke();
-
-        this.context.beginPath();
-        this.context.moveTo(0, this.height / 2.0 + 60);
-        this.context.lineTo(this.width, this.height / 2.0 + 60);
-        this.context.stroke();
+        this.drawHorizontalLine(this.height / 2.0 - 60);
+        this.drawHorizontalLine(this.height / 2.0 + 60);
         
         let msg1 = "PONG";
         let msg2 = "New Game: Enter";
@@ -162,15 +156,9 @@ class GameManager {
     // displays message and handles user input for the menu
     loadQuitGameMsg() {
         this.render();
-        this.context.beginPath();
-        this.context.moveTo(0, this.height / 2.0 - 30);
-        this.context.lineTo(this.width, this.height / 2.0 - 30);
-        this.context.stroke();
 
-        this.context.beginPath();
-        this.context.moveTo(0, this.height / 2.0 + 30);
-        this.context.lineTo(this.width, this.height / 2.0 + 30);
-        this.context.stroke();
+        this.drawHorizontalLine(this.height / 2.0 - 30);
+        this.drawHorizontalLine(this.height / 2.0 + 30);
         
         let msg = "Thanks for playing!"
         this.context.font = "40px Helvetica";
@@ -181,15 +169,9 @@ class GameManager {
     // displays message and handles user input for the menu
     loadDifficultySelectMenu() {
         this.render();
-        this.context.beginPath();
-        this.context.moveTo(0, this.height / 2.0 - 60);
-        this.context.lineTo(this.width, this.height / 2.0 - 60);
-        this.context.stroke();
 
-        this.context.beginPath();
-        this.context.moveTo(0, this.height / 2.0 + 60);
-        this.context.lineTo(this.width, this.height / 2.0 + 60);
-        this.context.stroke();
+        this.drawHorizontalLine(this.height / 2.0 - 60);
+        this.drawHorizontalLine(this.height / 2.0 + 60);
         
         let msg1 = "Select difficulty: ";
         let msg2 = "Easy: 1";
