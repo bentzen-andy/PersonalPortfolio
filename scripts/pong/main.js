@@ -1,6 +1,6 @@
 // ================================================
 // Update 
-// runs aprox 60x/second to run animations
+// runs approx 60x/second to run animations
 // ------------------------------------------------
 function update() {
     pong.update();
@@ -15,7 +15,7 @@ function update() {
 // Driver Code - (global scope)
 // These are all temp variables that are global, but are not intended 
 // to be directly used anywhere else in the program. Only used to add
-// clairity to object contstructors below. 
+// clarity to object constructors below. 
 // ------------------------------------------------
 
 // game properties

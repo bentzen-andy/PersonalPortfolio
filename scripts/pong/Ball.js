@@ -46,9 +46,9 @@ class Ball {
         context.closePath();
     }
 
-     // returns the x, y coodinate at the enemy's goal where the ball is on trajectory to land.
+     // returns the x, y coordinate at the enemy's goal where the ball is on trajectory to land.
      predictBallMovingUpward(gameManager, enemy) {
-        // take the ball's current postion and extrapolate based on movement
+        // take the ball's current position and extrapolate based on movement
         //  directions to determine where it will hit on the enemy's side of 
         //  the map. The enemy player can use this to return the ball. 
 
@@ -84,7 +84,7 @@ class Ball {
     // ---------------------------------------
 
     // interpolate the ball's position between frames to determine whether it hit the 
-    //  player's paddle. if hit, increase the speed of the ball and determin how it 
+    //  player's paddle. if hit, increase the speed of the ball and determine how it 
     //  should bounce away. 
     checkCollision_ballPlayer(player) {
         if (this.dy > 0) {
@@ -105,7 +105,7 @@ class Ball {
     }
 
     // interpolate the ball's position between frames to determine whether it hit the 
-    //  enemy's paddle. if hit, increase the speed of the ball and determin how it 
+    //  enemy's paddle. if hit, increase the speed of the ball and determine how it 
     //  should bounce away. 
     checkCollision_ballEnemy(enemy) {
         if (this.dy < 0) {
@@ -125,7 +125,7 @@ class Ball {
         }
     }
 
-    // simple boundry check to see if ball hit the left or right walls. 
+    // simple boundary check to see if ball hit the left or right walls. 
     checkCollision_ballWalls(walls) {
         // ball --> wall collision
         let leftWall;
@@ -144,7 +144,7 @@ class Ball {
         else if (ballRight >= rightBoundary) { this.flipXDirection(); }
     }
 
-    // simple boundry check to see if ball hit the upper or lower pit.
+    // simple boundary check to see if ball hit the upper or lower pit.
     checkCollision_ballPits(pits, scoreboard) {
         // ball --> pit collision
         let upperPit;
@@ -163,7 +163,7 @@ class Ball {
         else if (ballBottom >= lowerBoundary) { scoreboard.score2++; this.resetBall(); }
     }
 
-    // determines the inital dx and dy of the ball. 
+    // determines the initial dx and dy of the ball. 
     getInitSpeed(initSpeed) {
         let rand = Math.random();
         let A = initSpeed * rand / 1.2;
@@ -190,7 +190,7 @@ class Ball {
     }
 
     // corrects the ball position when it collides with the paddle. this correction
-    //  allows the ball to bounce from the exact postion that it connected with 
+    //  allows the ball to bounce from the exact position that it connected with 
     //  the paddle. Otherwise the ball would dig into the paddle or pass through 
     //  it all together before it knows to reflect off the paddle's surface. 
     adjustBallPos(intersection) {
@@ -232,7 +232,7 @@ class Ball {
         this.dy = new_dy;
     }
 
-    // chanages the lateral direction of the ball. 
+    // changes the lateral direction of the ball. 
     flipXDirection() {
         this.dx = -this.dx;
     }

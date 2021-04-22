@@ -76,7 +76,7 @@ class Enemy {
     }
 
     // by default, the computer player tries to line up the ball with the middle of his 
-    //  paddle--returning the ball in a straight line. Harder difficutlty settings add
+    //  paddle--returning the ball in a straight line. Harder difficultly settings add
     //  a left/right adjustment to change force the ball to return to the left or right.
     calcPaddleAdjustment(gameManager, player, target_x) {
         if (gameManager.difficultyEasy)      return 0.0;
@@ -95,7 +95,7 @@ class Enemy {
         else if (dist > 0)                                    this.paddle.x -= 1.0; // close to avoid thrashing back and forth
     }
 
-    // returns a postive or negative distance from the center of the paddle
+    // returns a positive or negative distance from the center of the paddle
     //  max = right corner of the paddle
     //  min = left corner of the paddle
     addRandomNoise() {

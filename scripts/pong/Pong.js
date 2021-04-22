@@ -34,7 +34,7 @@ class Pong {
         this.enemy.update(this.ball, this.gameManager, this.player, this.frameCount);
     }
 
-    // called onece every frame; checks and handles collisions between all game objects
+    // called once every frame; checks and handles collisions between all game objects
     checkCollisions() {
         if (gameManager.isPaused) return;
         this.ball.checkCollisions(this.player, this.enemy, this.walls, this.pits, this.scoreboard);

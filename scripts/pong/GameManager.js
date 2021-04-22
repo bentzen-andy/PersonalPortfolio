@@ -23,7 +23,7 @@ class GameManager {
         this.newGame = false
     }
 
-    // called onece every frame
+    // called once every frame
     //  checks win conditions and progresses the game through the menu options
     update(scoreboard, ball) {
 
@@ -68,7 +68,7 @@ class GameManager {
     // Helper Methods
     // ---------------------------------------
 
-    // draws the enviromnent for the game and posts it to the HTML doc
+    // draws the environment for the game and posts it to the HTML doc
     makeCanvas() {
         let cnvs = document.createElement("canvas");
         cnvs.width  = this.width;
@@ -78,7 +78,7 @@ class GameManager {
         return cnvs;
     }
 
-    // event handeler for pausing the game
+    // event handler for pausing the game
     checkIsGamePaused() {
         let spacebar = "32";
         if      (keysDown[spacebar] && this.isPaused)  { this.isPaused = false; delete keysDown[spacebar]; }
@@ -191,7 +191,7 @@ class GameManager {
         this.context.lineTo(this.width, this.height / 2.0 + 60);
         this.context.stroke();
         
-        let msg1 = "Select difficutly: ";
+        let msg1 = "Select difficulty: ";
         let msg2 = "Easy: 1";
         let msg3 = "Normal: 2";
         let msg4 = "Hard: 3";
