@@ -8,12 +8,12 @@
     <h1>Andy Bentzen</h1>
 
     <nav>
-        <a href="about.html">About</a> | 
-        <a href="skills.html">Skills</a> | 
-        <a href="pong.html">Pong Game</a> | 
-        <a href="mario.html">Mario Game</a> | 
-        <a href="zelda.html">Zelda Game</a>
+        <?php include '../php/navbar.php'; ?>
     </nav> 
+    <div id="game"></div>
+    <div id="score">
+        <?php include '../php/scoreboard.php'; ?> 
+    </div>
 
     <script src="../scripts/pong/Geometry.js"></script>
     <script src="../scripts/pong/Pit.js"></script>

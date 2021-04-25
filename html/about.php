@@ -8,11 +8,7 @@
     <h1>Andy Bentzen</h1>
 
     <nav>
-        <a href="about.html">About</a> | 
-        <a href="skills.html">Skills</a> | 
-        <a href="pong.html">Pong Game</a> | 
-        <a href="mario.html">Mario Game</a> | 
-        <a href="zelda.html">Zelda Game</a>
+        <?php include '../php/navbar.php'; ?>
     </nav> 
 
     <p>Hi there! My name is Andy. I love pizza, hate black olives, and I've recently discovered 

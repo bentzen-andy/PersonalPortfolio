@@ -82,7 +82,9 @@ class GameManager {
         cnvs.width  = this.width;
         cnvs.height = this.height;
         cnvs.style.backgroundColor = this.color;
-        document.body.appendChild(cnvs);
+
+        let gameElement = document.getElementById('game');
+        gameElement.appendChild(cnvs);
         return cnvs;
     }
 
