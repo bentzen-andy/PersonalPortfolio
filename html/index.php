@@ -19,15 +19,14 @@
 
         A few years ago, I started working as an intern with a CAD team at an office furniture 
         manufacturer. I started out with some basic file creation, and quality-checking tasks. 
-        I noticed early on that there was a repetitive rhythm to the work, and I started thinking, 
+        I noticed early on that there was a repetitive rhythm to the work, and so I started thinking, 
         "Wow, I wonder if I could teach the computer how to do some of these things for me." <br><br>
 
         Before I knew it, I was off and running on some online tutorials--learning this 
-        really weird scripting language to automate some of our CAD work. <br><br>
-
-        Since then I've taken a few classes and read a few books and leaning a new thing each 
-        and every day. Feel free to browse thorough my digital portfolio to check out what I've 
-        been working on lately. 
+        really weird scripting language to automate some of our CAD work.Since then I've taken a few 
+        classes and read a few books, and I feel like I lean something each and every day.  <br><br>
+        
+        Feel free to browse thorough my digital portfolio to check out what I've been working on lately. 
     </p>
 
 <footer>
