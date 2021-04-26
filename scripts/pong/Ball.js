@@ -30,11 +30,11 @@ class Ball {
     }
 
     // called every frame; handles collisions between the ball and other objects
-    checkCollisions(player, enemy, walls, pits, scoreboard) { 
+    checkCollisions(player, enemy, walls, pits, scoreboard, gameManager) { 
         this.checkCollision_ballPlayer(player);
         this.checkCollision_ballEnemy(enemy);
         this.checkCollision_ballWalls(walls);
-        this.checkCollision_ballPits(pits, scoreboard);
+        this.checkCollision_ballPits(pits, scoreboard, gameManager);
     }
 
     // called every frame; draws the ball to the canvas
@@ -145,7 +145,7 @@ class Ball {
     }
 
     // simple boundary check to see if ball hit the upper or lower pit.
-    checkCollision_ballPits(pits, scoreboard) {
+    checkCollision_ballPits(pits, scoreboard, gameManager) {
         // ball --> pit collision
         let upperPit;
         let lowerPit;
@@ -159,8 +159,69 @@ class Ball {
         let ballBottom = this.y + ball.radius;
        
         // boundary check
-        if      (ballTop    <= upperBoundary) { scoreboard.score1++; this.resetBall(); }
-        else if (ballBottom >= lowerBoundary) { scoreboard.score2++; this.resetBall(); }
+        if      (ballTop    <= upperBoundary) { scoreboard.score1++; this.resetBall(); this.addLeaderBoardScore(scoreboard, gameManager); this.postHighScore(scoreboard); }
+        else if (ballBottom >= lowerBoundary) { scoreboard.score2++; this.resetBall(); this.subtractLeaderBoardScore(scoreboard, gameManager); }
+    }
+
+    addLeaderBoardScore(scoreboard, gameManager) {
+        let scoreMultiplier;
+        if      (gameManager.difficultyEasy)      scoreMultiplier = 1;
+        else if (gameManager.difficultyNormal)    scoreMultiplier = 2;
+        else if (gameManager.difficultyHard)      scoreMultiplier = 3;
+        else if (gameManager.difficultyNightmare) scoreMultiplier = 4;
+
+        scoreboard.leaderBoardScore += 100 * scoreMultiplier;
+    }
+
+    subtractLeaderBoardScore(scoreboard, gameManager) {
+        let scoreMultiplier;
+        if      (gameManager.difficultyEasy)      scoreMultiplier = 0;
+        else if (gameManager.difficultyNormal)    scoreMultiplier = 1;
+        else if (gameManager.difficultyHard)      scoreMultiplier = 2;
+        else if (gameManager.difficultyNightmare) scoreMultiplier = 3;
+
+        scoreboard.leaderBoardScore -= 100 * scoreMultiplier;
+    }
+
+    postHighScore(scoreboard) {
+        if (scoreboard.score1 < 1) return;
+        let newHighScoreForm = document.getElementById('new-high-score-form');
+
+        let msg1 = "A new high score: " + scoreboard.leaderBoardScore;
+        let msgText1 = document.createTextNode(msg1);
+        let para1 = document.createElement('p');
+        para1.appendChild(msgText1);
+        newHighScoreForm.appendChild(para1);
+        
+        let msg2 = "Submit your name: ";
+        let msgText2 = document.createTextNode(msg2);
+        let para2 = document.createElement('p');
+        para2.appendChild(msgText2);
+        newHighScoreForm.appendChild(para2);
+
+        let form = document.createElement('form');
+        form.setAttribute('onsubmit', 'return ajaxPost()' );
+
+        let name = "Name:";
+        let nameText = document.createTextNode(name);
+        let label1 = document.createElement('label');
+        label1.setAttribute('for', 'name');
+        label1.appendChild(nameText);
+
+        let input1 = document.createElement('input');
+        input1.setAttribute('type', 'text');
+        input1.setAttribute('id', 'name');
+        input1.setAttribute('name', 'name');
+
+        let input4 = document.createElement('input');
+        input4.setAttribute('type', 'submit');
+        input4.setAttribute('value', 'Submit');
+
+        form.appendChild(label1);
+        form.appendChild(input1);
+        form.appendChild(input4);
+
+        newHighScoreForm.appendChild(form);
     }
 
     // determines the initial dx and dy of the ball. 

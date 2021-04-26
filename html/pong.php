@@ -11,10 +11,12 @@
         <?php include '../php/navbar.php'; ?>
     </nav> 
     <div id="game"></div>
+    <div id="new-high-score-form"></div>
     <div id="score">
         <?php include '../php/scoreboard.php'; ?> 
     </div>
 
+    <script src="../scripts/pong/ajax.js"></script>
     <script src="../scripts/pong/Geometry.js"></script>
     <script src="../scripts/pong/Pit.js"></script>
     <script src="../scripts/pong/Wall.js"></script>

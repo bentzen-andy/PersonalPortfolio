@@ -5,6 +5,7 @@ class Scoreboard {
     constructor(score1, score2) {
         this.score1 = score1;
         this.score2 = score2;
+        this.leaderBoardScore = 0;
     }
 
     // called every frame. draws the current score to the HUD
@@ -26,6 +27,6 @@ class Scoreboard {
         
         context.font = "16px Helvetica";
         context.fillStyle = "#000000";
-        context.fillText("Score: " + this.score1 + ":" + this.score2 + ", " + "Difficulty: " + difficulty + ", Ball Speed: " + ballSpeed , 5, canvas.height - 12);
+        context.fillText("Points: " + this.score1 + ":" + this.score2 + ", " + "Difficulty: " + difficulty + ", Ball Speed: " + ballSpeed , 5, canvas.height - 12);
     }
 }

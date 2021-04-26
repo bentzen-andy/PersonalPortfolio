@@ -15,7 +15,7 @@ class Enemy {
         // determine speed 
         this.paddle.dx = this.calcSpeed(gameManager);
 
-        // determine where the paddle shoudld move to (varies with difficulty level)
+        // determine where the paddle should move to (varies with difficulty level)
         let target_x = this.predictBallLandingPoint_x(gameManager, ball);
 
         // determine a left/right adjustment for the paddle (varies with difficulty level)
