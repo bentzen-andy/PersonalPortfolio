@@ -81,15 +81,9 @@
             <td>Grand Valley State University</td>
             <td>In-person training</td>
           </tr>
-
         </table>
 
-    
-        <h2>Scripts I've Written for Work</h2>
-        <li>one</li>
-        <li>two</li>
-        <li>three</li>
-    
+        
 <footer>
     <?php include '../php/footer.php'; ?>
 </footer>
