@@ -216,6 +216,7 @@ class GameManager {
         // reset all the main menu variables
         scoreboard.score1 = 0;
         scoreboard.score2 = 0;
+        scoreboard.leaderBoardScore = 0;
         this.isPaused = false;
         this.playerWins = false;
         this.enemyWins = false;
