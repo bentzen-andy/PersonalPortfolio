@@ -35,7 +35,7 @@
         </table>
     
         <h2>Classes I've Taken</h2>
-        <table border="1">
+        <table class="styled-table">
           <tr>
             <td>Course</td>
             <td>University</td>

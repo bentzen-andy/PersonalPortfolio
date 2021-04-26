@@ -24,10 +24,8 @@
         // Add $data as the last parameter, to sort by the common key
         array_multisort($score, SORT_DESC, $name, SORT_ASC, $csvData);
 
-        print "<h3>";
-        print "---High Scores!---";
-        print "</h3>";
-        print "<table>";
+        print "<table class='styled-table'>";
+        print "<caption>High Scores</caption>";
         print "<tr><td>Name</td><td>Score</td><td>Difficulty</td><tr>";
 
         $i = 0;
