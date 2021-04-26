@@ -26,7 +26,7 @@
 
         print "<table class='styled-table'>";
         print "<caption>High Scores</caption>";
-        print "<tr><td>Name</td><td>Score</td><td>Difficulty</td><tr>";
+        print "<tr><td>Name</td><td>Score</td><td>Difficulty</td></tr>";
 
         $i = 0;
         $row = 0;
