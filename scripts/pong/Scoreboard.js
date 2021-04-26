@@ -11,8 +11,8 @@ class Scoreboard {
     // called every frame. draws the current score to the HUD
     render(canvas, context, gameManager, ball) {
         context.beginPath();
-        context.moveTo(0, canvas.height - 30);
-        context.lineTo(canvas.width, canvas.height - 30);
+        context.moveTo(0, canvas.height - 60);
+        context.lineTo(canvas.width, canvas.height - 60);
         context.stroke();
 
         // text for difficulty setting
@@ -27,6 +27,7 @@ class Scoreboard {
         
         context.font = "16px Helvetica";
         context.fillStyle = "#000000";
-        context.fillText("Points: " + this.score1 + ":" + this.score2 + ", " + "Difficulty: " + difficulty + ", Ball Speed: " + ballSpeed , 5, canvas.height - 12);
+        context.fillText("Points: " + this.score1 + ":" + this.score2 + ", " + "Difficulty: " + difficulty + ", Ball Speed: " + ballSpeed , 5, canvas.height - 32);
+        context.fillText("Score: " + this.leaderBoardScore, 5, canvas.height - 12);
     }
 }

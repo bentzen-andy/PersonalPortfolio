@@ -184,7 +184,7 @@ class Ball {
     }
 
     postHighScore(scoreboard) {
-        if (scoreboard.score1 < 1) return;
+        if (scoreboard.score1 < 5) return;
         let newHighScoreForm = document.getElementById('new-high-score-form');
 
         let msg1 = "A new high score: " + scoreboard.leaderBoardScore;

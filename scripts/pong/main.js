@@ -27,7 +27,7 @@ let gameColor = '#E0E0E0';
 let playerWidth = 80.0;
 let playerHeight = 10.0;
 let player_x = gameWidth / 2.0;
-let player_y = gameHeight - 40.0;
+let player_y = gameHeight - 70.0;
 let player_dx = 7.0;
 let playerColor = '#FFFFFF';
 // let playerColor = '#00BFFF';
@@ -51,8 +51,8 @@ let ballSpeed = 4.0;
 // walls and pits
 let pt1 = { x: 0.0,        y: 0.0 } ;
 let pt2 = { x: gameWidth,  y: 0.0 } ;
-let pt3 = { x: gameWidth,  y: gameHeight - 30.0 } ;
-let pt4 = { x: 0.0,        y: gameHeight - 30.0 } ;
+let pt3 = { x: gameWidth,  y: gameHeight - 60.0 } ;
+let pt4 = { x: 0.0,        y: gameHeight - 60.0 } ;
 let walls = [];
 let pits = [];
 
