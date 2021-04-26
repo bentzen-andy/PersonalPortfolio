@@ -2,6 +2,7 @@
 <meta charset="utf-8">
 <head>
     <title>Mario Game</title>
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>
@@ -18,4 +19,7 @@
     </p>
     
 
+<footer>
+    <?php include '../php/footer.php'; ?>
+</footer>
 </body>
