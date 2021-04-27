@@ -17,6 +17,7 @@
     }
 
     function isInTopTop($currentScore, $data) {
+        if (count($data) < 10) return true; 
         $name  = array_column($data, 'name');
         $score = array_column($data, 'score');
         
